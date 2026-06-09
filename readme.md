@@ -1,3 +1,9 @@
+<!--
+Copyright (c) 2026 Yidong Zhu
+
+Licensed under MIT
+
+-->
 # innerpip
 
 ### innerpip介绍
@@ -13,7 +19,7 @@ from innerpip import Innerpip
 # 实例化Innerpip，并指定日志保存路径
 inner_pip = Innerpip(log_dir='./log')
 
-# 执行pip路径
+# 运行pip命令
 
 ## 第 1 种方法，将Innerpip实例作为方法调用
 inner_pip('install', 'pyyaml')
