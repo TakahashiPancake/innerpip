@@ -48,7 +48,6 @@ class Innerpip(object):
         self.delete_old_logs(log_dir, days = days)
 
     # 尝试导入pip模块，如果导入错误，则安装pip模块
-
     try:
       import pip
     except ImportError:
@@ -70,12 +69,14 @@ class Innerpip(object):
   def __call__(
     self, *args
   ) -> None:
+    """用于调用pip模块main方法"""
     if len(args) == 1 and isinstance(args[0], list):
       self.main(args[0])
     else:
       self.main(list(args))
 
   def main(self, args: list[str]) -> None:
+    """innerpip main方法"""
     if self.__log_path is not None:
       with open(self.__log_path, 'a') as file:
         sync_io = ExtendedStringIO(file, sys.stderr)
